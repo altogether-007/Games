@@ -99,10 +99,9 @@
         }
 
         /* Show all content (PC + Mobile + All) */
-        .all-content, .pc-content, .mobile-content {
+        .pc-content, .mobile-content {
             display: none;
         }
-        .all-content.active,
         .pc-content.active,
         .mobile-content.active {
             display: block;
@@ -137,65 +136,111 @@
     <h1>Top Browser Games</h1>
     
     <div class="filter-buttons">
-        <!-- All Button -->
-        <button onclick="filterContent('all')"><i class="fas fa-th-large"></i> All</button>
-        
         <!-- PC Button with Icon -->
         <button onclick="filterContent('pc')"><i class="fas fa-desktop"></i> PC</button>
         
         <!-- Mobile Button with Icon -->
         <button onclick="filterContent('mobile')"><i class="fas fa-mobile-alt"></i> Mobile</button>
     </div>
-
+    
     <div class="file-container">
-        <!-- All Content -->
-        <div class="directory-item filter-choose all-content">
-            <a href="https://altogether-007.github.io/Games/Doodle-Jump/"><img src="https://i.postimg.cc/63nNfFKF/Altogether.png" alt="Doodle Jump"></a>
+        <!-- PC Content -->
+        
+        
+        <div class="directory-item filter-choose pc-content">
+            <a href="https://altogether-007.github.io/Games/Doodle-Jump/"><img src="https://i.postimg.cc/yNqPLm97/cropped-doodlejump-icon.png" alt="Doodle Jump"></a>
             <a href="https://altogether-007.github.io/Games/Doodle-Jump/">Doodle Jump</a>
         </div>
 
-        <!-- PC Content -->
+        <div class="directory-item filter-choose pc-content">
+            <a href="https://altogether-007.github.io/Games/Hextris"><img src="https://i.postimg.cc/FHzYXBth/image.webp" alt="Hextris"></a>
+            <a href="https://altogether-007.github.io/Games/Hextris">Hextris</a>
+        </div>
+
         <div class="directory-item filter-choose pc-content">
             <a href="https://altogether-007.github.io/Games/Jump-Pits/"><img src="https://i.postimg.cc/Dfdw0n56/image.png" alt="Jump Pits"></a>
             <a href="https://altogether-007.github.io/Games/Jump-Pits/">Jump Pits</a>
         </div>
-        
-       <div class="directory-item filter-choose pc-content">
+
+        <div class="directory-item filter-choose pc-content">
             <a href="https://altogether-007.github.io/Games/Snake/"><img src="https://i.postimg.cc/90mHjd2g/image.png" alt="Snake"></a>
             <a href="https://altogether-007.github.io/Games/Snake/">Snake</a>
         </div>
-
-        <!-- Mobile Content -->
-        <div class="directory-item filter-choose mobile-content">
-            <a href="https://Altogether-007.vercel.app/JioSaavan"><img src="https://play-lh.googleusercontent.com/kl-7LqnjbT0onFUgWNrcz06oRXovfvO_GVYZoLW1jNwl8NlpFx8NCwKgXuvp1hbWdZI" alt="JioSaavan"></a>
-            <a href="https://Altogether-007.vercel.app/JioSaavan">JioSaavan</a>
+            
+        <div class="directory-item filter-choose pc-content">
+            <a href="https://altogether-007.github.io/Games/Tetris-Classic/?lan=en"><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Tetris_logo.png" alt="Tetris Classic"></a>
+            <a href="https://altogether-007.github.io/Games/Tetris-Classic/?lan=en">Tetris Classic</a>
         </div>
 
-        <!-- Add more content items similarly with appropriate classes: all-content, pc-content, mobile-content -->
+        <div class="directory-item filter-choose pc-content">
+            <a href="https://altogether-007.github.io/Games/Tetris/"><img src="https://i.postimg.cc/15F2t9pt/artworks-2u-Psb-X7euuzz-QJBh-3-KWo6-A-t500x500.jpg" alt="Tetris"></a>
+            <a href="https://altogether-007.github.io/Games/Tetris/">Tetris</a>
+        </div>
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Mobile Content -->
+        
+        <div class="directory-item filter-choose mobile-content">
+            <a href="https://altogether-007.github.io/Games/Hextris"><img src="https://i.postimg.cc/FHzYXBth/image.webp" alt="Hextris"></a>
+            <a href="https://altogether-007.github.io/Games/Hextris">Hextris</a>
+        </div>
+
+        <div class="directory-item filter-choose mobile-content">
+            <a href="https://altogether-007.github.io/Games/Tetris-Classic/?lan=en"><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Tetris_logo.png" alt="Tetris Classic"></a>
+            <a href="https://altogether-007.github.io/Games/Tetris-Classic/?lan=en">Tetris Classic</a>
+        </div>
+          
+        <div class="directory-item filter-choose mobile-content">
+            <a href="https://altogether-007.github.io/Games/Tetris/"><img src="https://i.postimg.cc/15F2t9pt/artworks-2u-Psb-X7euuzz-QJBh-3-KWo6-A-t500x500.jpg" alt="Tetris"></a>
+            <a href="https://altogether-007.github.io/Games/Tetris/">Tetris</a>
+        </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     <script>
         function filterContent(type) {
             // Hide all items first
-            const allItems = document.querySelectorAll('.all-content, .pc-content, .mobile-content');
+            const allItems = document.querySelectorAll('.pc-content, .mobile-content');
             allItems.forEach(item => {
                 item.classList.remove('active');
             });
 
             // Show the selected category
-            if (type === 'all') {
-                document.querySelectorAll('.all-content, .pc-content, .mobile-content').forEach(item => {
-                    item.classList.add('active');
-                });
-            } else {
-                document.querySelectorAll('.' + type + '-content').forEach(item => {
-                    item.classList.add('active');
-                });
-            }
+            document.querySelectorAll('.' + type + '-content').forEach(item => {
+                item.classList.add('active');
+            });
         }
 
-        // Show all content by default
-        filterContent('all');
+        // Show PC content by default (or you can set mobile, depending on preference)
+        filterContent('pc');
     </script>
 </body>
 </html>
